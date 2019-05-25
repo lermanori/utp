@@ -1,38 +1,79 @@
 <template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
+  <v-app id="inspire">
+
+    <v-toolbar
+      color="black"
+      dark
+      fixed
+      app
+      clipped-right
+    >
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title>UTP</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
+      
     </v-toolbar>
+    <v-navigation-drawer 
+      id="drawer"
+      v-model="drawer"
+      dark
+      fixed
+      app
+    >
+      <v-list dense class="mt-5">
+        <v-list-tile to="/">
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>main-menu</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+            <v-list-tile to="/intro">
+          <v-list-tile-action>
+            <v-icon>exit_to_app</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>demo-component</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
 
     <v-content>
-      <HelloWorld/>
+      <v-container fluid fill-height>
+        <v-layout justify-center align-center>
+          <v-flex shrink>
+            <router-view/>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-content>
+
+
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+  export default {
+    data: () => ({
+      drawer: false,
+      left:false
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
-  data () {
-    return {
-      //
+
+ 
+    }),
+    props: {
+      source: String
     }
   }
-}
 </script>
+<style scoped>
+  #drawer{
+    background-color: black;
+    color: white;
+  }
+
+</style>
+
