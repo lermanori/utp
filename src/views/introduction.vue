@@ -2,7 +2,7 @@
     <v-container>
         <v-layout>
             <v-flex>
-                <h1 id="title" class="mb-5 text-xs-center display-4 font-weight-thin">
+                <h1 id="title" class="animated bounce 4s mb-5 text-xs-center display-4 font-weight-thin">
                     introduction
                 </h1>
                 <h4 id="subtitle" class="mb-5 text-xs-center display-1 font-weight-black">
@@ -29,7 +29,7 @@ export default {
     from{opacity: 0;}
     to{opacity: 1;}
 }
-@keyframes LeftIn {
+@keyframes leftIn {
     from{transform: translateX(-400px);}
     to{transform: translateX(0px);
         opacity: 1;}
@@ -41,13 +41,12 @@ export default {
         opacity: 1;}
 }
 #title{
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 4s;
+    /*opacity: 0;
+    animation-name: ;*/
+    animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 #subtitle{
-    
     animation-name: leftIn;
     animation-duration: 4s;
     animation-fill-mode: forwards;
