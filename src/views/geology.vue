@@ -6,9 +6,9 @@
       </v-flex>
     </v-layout>
     <v-layout justify-center>
-      <v-flex xs12>
+      <!--<v-flex xs12>
         <app-element/>
-      </v-flex>
+      </v-flex>-->
       <v-flex xs12>
         <app-element1
           :symbols="element_obj.symbols"
