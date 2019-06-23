@@ -1,29 +1,29 @@
 <template>
-  <v-container>
+  <v-container fluid class="main-container">
     <v-layout justify-center>
-      <v-flex xs4>
-        <h1 class="ma-3 text-xs-center">{{utptitle}}</h1>
+      <v-flex xs12>
+        <video controls="true" autoplay="true" loop style="width:100%; height:100%;">
+          <source src="movie.mp4" type="video/mp4">
+        </video>
       </v-flex>
     </v-layout>
-    <v-layout justify-center row wrap class="my-4 text-xs-center">
-      <v-flex xs2  >
-          <v-btn outline class="btn mx-2">{{btn1}}</v-btn>
-      </v-flex>
-      <v-flex xs2 class="">
-          <v-btn outline class="btn mx-2">{{btn2}}</v-btn>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <v-layout justify-center class="mt-4">
+      <v-flex xs4 v-for="(subject,index) in subjects_obj" :key="index">
+        <app-subject-btn :src="subject.src" :label="subject.label" :to="subject.to"/>
       </v-flex>
     </v-layout>
-    <v-layout justify-center>
-      <v-flex xs2 v-for="(subject,index) in subjects_obj" :key=index >
-          <app-subject-btn :src='subject.src' :label='subject.label' />
-      </v-flex>
-    </v-layout>
-    
   </v-container>
 </template>
 
 <script>
-import subjectButton from '../components/subjectButton.vue';
+import subjectButton from "../components/subjectButton.vue";
 
 export default {
   data: () => {
@@ -33,27 +33,33 @@ export default {
       btn2: "הסבר",
       subjects_obj: [
         {
-          src:"logo_meteorology.jpg",
-          label:"מטאורולוגיה"
+          src: "logo_meteorology.jpg",
+          label: "מטאורולוגיה",
+          to: "/geology"
         },
         {
-          src:"logo_biology.jpg",
-          label:"ביולוגיה"
+          src: "logo_biology.jpg",
+          label: "ביולוגיה",
+          to: "/geology"
         },
         {
-          src:"logo_geology.jpg",
-          label:"גאולוגיה"
-        },
+          src: "logo_geology.jpg",
+          label: "גאולוגיה",
+          to: "/geology"
+        }
       ]
-
     };
   },
   components: {
-    'app-subject-btn':subjectButton
+    "app-subject-btn": subjectButton
   }
 };
 </script>
 <style scoped>
+.main-container {
+  padding: 0px;
+}
+
 @font-face {
   font-family: rutz-title;
   src: url("../../public/rutz_font/Rutz_OEMedPro.otf");
@@ -74,9 +80,8 @@ h1 {
   border-radius: 10%;
 }
 .v-btn--floating {
-
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
 </style>
 
