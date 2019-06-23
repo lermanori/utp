@@ -6,9 +6,7 @@
       </v-flex>
     </v-layout>
     <v-layout justify-center>
-      <!--<v-flex xs12>
-        <app-element/>
-      </v-flex>-->
+
       <v-flex xs12>
         <app-element1
           :symbols="element_obj.symbols"
@@ -22,7 +20,6 @@
 </template>
 
 <script>
-import element from "../components/element.vue";
 import element1 from "../components/element1.vue";
 export default {
   data() {
@@ -45,7 +42,6 @@ export default {
     };
   },
   components: {
-    "app-element": element,
     "app-element1": element1
   }
 };
