@@ -11,7 +11,7 @@
         >
           <v-toolbar :color="bar.class" :dark="bar.dark">
             <v-btn icon @click="opened=!opened">
-              <v-img width="30px" height="30px" contain src="/i_icon_image.png"/>
+              <v-img width="30px" height="30px" contain :src="baseURL+'/i_icon_image.png'"/>
             </v-btn>
             <v-spacer></v-spacer>
             <span ref="label" class="label pr-3">{{label}}</span>
@@ -21,13 +21,13 @@
               v-for="(subject,index) in symbols"
               :key="index"
             >
-              <v-img class="px-1" width="42px" height="42px" contain :src="subject.src"/>
+              <v-img class="px-1" width="42px" height="42px" contain :src="baseURL+subject.src"/>
             </v-btn>
           </v-toolbar>
           <span class="elementName mr-5">{{elementName}}</span>
           <keep-alive>
-            <v-img v-if="opened" contain class="mx-5 my-3" :src="src_overlay" :key="1"/>
-            <v-img v-show="!opened" contain class="mx-5 my-3" :src="src_hero" :key="2"/>
+            <v-img v-if="opened" contain class="mx-5 my-3" :src="baseURL+src_overlay" :key="1"/>
+            <v-img v-show="!opened" contain class="mx-5 my-3" :src="baseURL+src_hero" :key="2"/>
           </keep-alive>
         </v-card>
       </v-flex>
@@ -40,6 +40,7 @@
 export default {
   data() {
     return {
+      baseURL:"/utp/",
       bar: { class: "elevation-0 white bar px-4" },
       logo_title: "",
       activeClass: "label",
