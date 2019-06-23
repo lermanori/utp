@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-layout justify-center>
       <v-flex xs12>
-        <v-img :src="geology_img_src"/>
+        <v-img :src="baseURL + 'geology_img_src'"/>
       </v-flex>
     </v-layout>
     <v-layout justify-center>
@@ -27,6 +27,7 @@ import element1 from "../components/element1.vue";
 export default {
   data() {
     return {
+      baseURL:"/utp/",
       geology_img_src: "/geology_img.jpg",
       element_obj: {
         symbols: [
