@@ -27,7 +27,7 @@ import element1 from "../components/element1.vue";
 export default {
   data() {
     return {
-      baseURL:"/utp/",
+      baseURL:"/utp",
       geology_img_src: "/geology_img.jpg",
       element_obj: {
         symbols: [
