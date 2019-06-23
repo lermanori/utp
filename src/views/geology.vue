@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-layout justify-center>
       <v-flex xs12>
-        <v-img :src="baseURL + 'geology_img_src'"/>
+        <v-img :src="baseURL + geology_img_src"/>
       </v-flex>
     </v-layout>
     <v-layout justify-center>
