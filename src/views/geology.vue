@@ -1,14 +1,14 @@
 <template>
-  <v-container fluid>
+  <v-container grid-list-md text-xs-center>
     <v-layout justify-center>
-      <v-flex xs12>
-        <v-img :src="baseURL + geology_img_src"/>
+      <v-flex xs12 id="img">
+        <v-img  :src="baseURL + geology_img_src"/>
       </v-flex>
     </v-layout>
-    <v-layout justify-center>
+    <v-layout row wrap>
 
-      <v-flex xs12>
-        <app-element1
+      <v-flex  xs12  v-for="(element_obj,index) in dataGeology" :key="index">
+        <app-element1 class="ma-5"
           :symbols="element_obj.symbols"
           :elementName="element_obj.elementName"
           :src_hero="element_obj.src_hero"
@@ -21,12 +21,17 @@
 
 <script>
 import element1 from "../components/element1.vue";
+import DataGeology from "../../public/data_geology.js"
+
+console.log(DataGeology);
+
 export default {
   data() {
     return {
-      baseURL:"/utp",
+      baseURL:"/utp/",
+      dataGeology:DataGeology,
       geology_img_src: "/geology_img.jpg",
-      element_obj: {
+      /*element_obj: {
         symbols: [
           { text: "מתקיימת בקיץ", src: "/summer_icon_image.png" },
           {
@@ -38,7 +43,7 @@ export default {
         elementName: "Sailing Rocks | אבנים נעות",
         src_overlay: "/blue_rocks.png",
         src_hero: "/sailing_rocks.png"
-      }
+      }*/
     };
   },
   components: {

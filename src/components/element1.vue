@@ -1,15 +1,15 @@
 <template>
-  <v-container class="container" style="padding:0px;">
+  <v-container  class="container my-5" style="padding:0px;">
     <v-layout row wrap>
       <v-flex xs12 sm12 md12 class="white my-3 mx-5" style="background-color: white;">
         <v-card
           color="white"
           class="text-xs-right"
           flat
-          height="200px"
+          height=""
           style="background-color: white;"
         >
-          <v-toolbar :color="bar.class" :dark="bar.dark">
+          <v-toolbar  style="" :color="bar.class" :dark="bar.dark">
             <v-btn icon @click="opened=!opened">
               <v-img width="30px" height="30px" contain :src="baseURL+'/i_icon_image.png'"/>
             </v-btn>
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       baseURL:"/utp/",
-      bar: { class: "elevation-0 white bar px-4" },
+      bar: { class: "elevation-0 white bar px-4 " },
       logo_title: "",
       activeClass: "label",
       opened: false,
@@ -86,7 +86,8 @@ span.elementName {
   font-weight: 200;
   font-size: 25px;
 }
-.sailing {
+.toolbar :not(:first-child) {
+  margin-top: 400px;
 }
 
 .container {

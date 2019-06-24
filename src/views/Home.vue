@@ -2,7 +2,7 @@
   <v-container fluid class="main-container">
     <v-layout justify-center>
       <v-flex xs12>
-        <video controls="true" autoplay="true" loop style="width:100%; height:100%;">
+        <video muted playsinline autoplay="true" loop style="width:100%; height:100%;">
           <source src="movie.mp4" type="video/mp4">
         </video>
       </v-flex>
@@ -35,12 +35,12 @@ export default {
         {
           src: "logo_meteorology.jpg",
           label: "מטאורולוגיה",
-          to: "/geology"
+          to: "/meteorology"
         },
         {
           src: "logo_biology.jpg",
           label: "ביולוגיה",
-          to: "/geology"
+          to: "/biology"
         },
         {
           src: "logo_geology.jpg",
