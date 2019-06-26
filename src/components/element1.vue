@@ -3,8 +3,8 @@
     <!--  <v-layout row wrap justify-center>
     <v-flex xs12 sm12 md12 class="white my-3 mx-5" style="background-color: white;">-->
     <v-card color="white" class="text-xs-right" flat height style="background-color: white;">
-      <v-toolbar style :color="bar.class" :dark="bar.dark">
-        <v-btn icon @click="opened=!opened" style="transform:translateX(5px);" :ripple="false">
+      <v-toolbar style="padding:0px;" :color="bar.class" :dark="bar.dark">
+        <v-btn icon @click="opened=!opened" style="transform:translateX(-10px);" :ripple="false">
           <v-img width="30px" height="30px" contain :src="baseURL+'/i_icon_image.png'"/>
         </v-btn>
         <v-spacer></v-spacer>
@@ -22,10 +22,24 @@
           v-for="(subject,index) in symbols"
           :key="index"
         >
-          <v-img class="px-1" width="42px" height="42px" contain :src="baseURL+subject.src"/>
+          <v-img class="pl-2" width="42px" height="42px" contain :src="baseURL+subject.src"/>
         </v-btn>
       </v-toolbar>
-      <span class="elementName pr-4" style="margin-right:0;">{{elementName}}</span>
+
+      <span class="elementName pr-3" style="margin-right:0;">{{elementName}}</span>
+      <transition
+        enter-active-class="animated zoomIn"
+        leave-active-class="animated zoomOut"
+        mode="out-in"
+      >
+        <v-img
+          contain
+          class="my-3 mx-3"
+          :src="opened == true ? baseURL+src_overlay : baseURL+src_hero"
+          :key="opened == true ? baseURL+src_overlay : baseURL+src_hero"
+        />
+      </transition>
+      <!--
       <v-container fluid>
         <v-carousel
           class="mr-1 my-1"
@@ -36,9 +50,9 @@
           :interval="1000000"
           :value="opened == true ? 1 : 0"
         >
-          <v-carousel-item v-for="(item,i) in items" :key="i" :src="baseURL+item.src"></v-carousel-item>
+          <v-carousel-item contain v-for="(item,i) in items" :key="i" :src="baseURL+item.src"></v-carousel-item>
         </v-carousel>
-      </v-container>
+      </v-container>-->
       <!--
           <v-dialog v-model="opened" max-width="1000" class="text-xs-center">
             
@@ -59,7 +73,7 @@ export default {
   data() {
     return {
       baseURL: "/utp/",
-      bar: { class: "elevation-0 white bar pr-0 " },
+      bar: { class: "elevation-0 white bar " },
       items: [{ src: this.src_hero }, { src: this.src_overlay }],
       logo_title: "",
       activeClass: "label",
