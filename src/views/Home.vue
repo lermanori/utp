@@ -15,7 +15,7 @@
     </v-layout>
 
     <v-layout justify-center class="mt-4">
-      <v-flex xs12 md12 lg3 v-for="(subject,index) in subjects_obj" :key="index">
+      <v-flex sm12 md12 lg3 v-for="(subject,index) in subjects_obj" :key="index">
         <app-subject-btn
           :src="subject.src"
           :label="subject.label"
