@@ -4,7 +4,7 @@
       <v-flex xs12 sm12 md12 class="white my-3 mx-5" style="background-color: white;">
         <v-card color="white" class="text-xs-right" flat height style="background-color: white;">
           <v-toolbar style :color="bar.class" :dark="bar.dark">
-            <v-btn icon @click="opened=!opened" style="transform:translateX(19px);" :ripple="false">
+            <v-btn icon @click="opened=!opened" style="transform:translateX(23px);" :ripple="false">
               <v-img width="30px" height="30px" contain :src="baseURL+'/i_icon_image.png'"/>
             </v-btn>
             <v-spacer></v-spacer>
