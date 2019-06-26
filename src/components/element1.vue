@@ -2,7 +2,13 @@
   <v-container justify-center class="container my-5" style="padding:0px;">
     <!--  <v-layout row wrap justify-center>
     <v-flex xs12 sm12 md12 class="white my-3 mx-5" style="background-color: white;">-->
-    <v-card color="white" class="text-xs-right" flat height style="background-color: white;">
+    <v-card
+      color="white"
+      class="text-xs-right"
+      flat
+      min-height="80vh"
+      style="background-color: white;"
+    >
       <v-toolbar style="padding:0px;" :color="bar.class" :dark="bar.dark">
         <v-btn icon @click="opened=!opened" style="transform:translateX(-10px);" :ripple="false">
           <v-img width="30px" height="30px" contain :src="baseURL+'/i_icon_image.png'"/>
