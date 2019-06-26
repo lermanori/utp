@@ -9,7 +9,6 @@
       <v-flex xs12 v-for="(element_obj,index) in dataBiology" :key="index">
         <app-element1
           v-if="ready"
-          class="ma-5"
           :symbols="element_obj.symbols"
           :elementName="element_obj.elementName"
           :src_hero="element_obj.src_hero"

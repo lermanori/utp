@@ -6,10 +6,10 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-      <v-flex xs12 v-for="(element_obj,index) in dataMeteorology" :key="index">
+      <v-flex align-self-center xs12 v-for="(element_obj,index) in dataMeteorology" :key="index">
         <app-element1
           v-if="ready"
-          class="ma-5"
+          class
           :symbols="element_obj.symbols"
           :elementName="element_obj.elementName"
           :src_hero="element_obj.src_hero"
