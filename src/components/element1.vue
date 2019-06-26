@@ -61,7 +61,7 @@ import { setTimeout } from "timers";
 export default {
   data() {
     return {
-      baseURL: "/utp/",
+      baseURL: "",
       bar: { class: "elevation-0 white bar px-0 " },
       items: [
         { src: this.baseURL + this.src_hero },
