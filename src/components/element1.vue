@@ -32,18 +32,20 @@
       </v-toolbar>
 
       <span class="elementName pr-3" style="margin-right:0;">{{elementName}}</span>
-      <transition
-        enter-active-class="animated zoomIn"
-        leave-active-class="animated zoomOut"
-        mode="out-in"
-      >
-        <v-img
-          contain
-          class="my-3 mx-3"
-          :src="opened == true ? baseURL+src_overlay : baseURL+src_hero"
-          :key="opened == true ? baseURL+src_overlay : baseURL+src_hero"
-        />
-      </transition>
+      <keep-alive>
+        <transition
+          enter-active-class="animated zoomIn"
+          leave-active-class="animated zoomOut"
+          mode="out-in"
+        >
+          <v-img
+            contain
+            class="my-3 mx-3"
+            :src="opened == true ? baseURL+src_overlay : baseURL+src_hero"
+            :key="opened == true ? baseURL+src_overlay : baseURL+src_hero"
+          />
+        </transition>
+      </keep-alive>
       <!--
       <v-container fluid>
         <v-carousel
