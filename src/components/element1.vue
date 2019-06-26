@@ -28,7 +28,7 @@
       <span class="elementName pr-4" style="margin-right:0;">{{elementName}}</span>
       <v-container fluid>
         <v-carousel
-          class="mr-1 my-3"
+          class="mr-1 my-1"
           style="max-width:95wv;"
           hide-delimiters
           hide-controls
