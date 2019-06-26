@@ -10,8 +10,8 @@
         >
           <router-view v-if="$vuetify.breakpoint.lgAndUp"/>
           <template v-else>
-            <v-layout justify-center align-center class="text-xs-center">
-              <h1 class="text-xs-center">view on devices from 1000px and up</h1>
+            <v-layout justify-center class="text-xs-center">
+              <h1 class="mt-5">view on devices from 1000px and up</h1>
             </v-layout>
           </template>
         </transition>
