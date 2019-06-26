@@ -40,7 +40,7 @@
             :interval="1000000"
             :value="opened == true ? 1 : 0"
           >
-            <v-carousel-item v-for="(item,i) in items" :key="i" :src="this.baseURL+item.src"></v-carousel-item>
+            <v-carousel-item v-for="(item,i) in items" :key="i" :src="baseURL+item.src"></v-carousel-item>
           </v-carousel>
           <!--
           <v-dialog v-model="opened" max-width="1000" class="text-xs-center">
