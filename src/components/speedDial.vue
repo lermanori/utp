@@ -47,11 +47,10 @@ export default {
   data() {
     return {
       fab: true,
-      baseUrl: "/utp/",
       logo: {
-        meteorology: this.baseUrl + "/meteor!!!.png",
-        geology: this.baseUrl + "/geo!!!.png",
-        biology: this.baseUrl + "/biology!!!.png"
+        meteorology: "/meteor!!!.png",
+        geology: "/geo!!!.png",
+        biology: "/biology!!!.png"
       }
     };
   },
