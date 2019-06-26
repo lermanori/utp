@@ -10,7 +10,7 @@
         >
           <router-view v-if="$vuetify.breakpoint.lgAndUp"/>
           <template v-else>
-            <h1>view on devices from 1000px and up</h1>
+            <h1 class="text-xs-center">view on devices from 1000px and up</h1>
           </template>
         </transition>
         <app-speed-dial/>
