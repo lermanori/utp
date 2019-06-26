@@ -6,8 +6,7 @@
       color="white"
       class="text-xs-right"
       flat
-      min-height="80vh"
-      style="background-color: white;"
+      style="background-color: white;min-height:90vh;"
     >
       <v-toolbar style="padding:0px;" :color="bar.class" :dark="bar.dark">
         <v-btn icon @click="opened=!opened" style="transform:translateX(-10px);" :ripple="false">
