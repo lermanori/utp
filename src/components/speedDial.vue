@@ -25,13 +25,13 @@
       color="black"
       style
     >
-      <v-img :src="logo.meteorology"></v-img>
+      <v-img :src="baseURL+logo.meteorology"></v-img>
     </v-btn>
     <v-btn outline v-if="this.$route.name!='biology'" to="biology" fab dark large color="black">
-      <v-img :src="logo.biology"></v-img>
+      <v-img :src="baseURL+logo.biology"></v-img>
     </v-btn>
     <v-btn outline v-if="this.$route.name!='geology'" to="geology" fab dark large color="black">
-      <v-img :src="logo.geology"></v-img>
+      <v-img :src="baseURL+logo.geology"></v-img>
     </v-btn>
     <v-btn v-if="this.$route.name!='home'" to="/" fab dark small color="indigo darken-4">
       <v-icon>home</v-icon>
@@ -47,10 +47,11 @@ export default {
   data() {
     return {
       fab: true,
+      baseURL: "/utp/",
       logo: {
-        meteorology: "/meteor!!!.png",
-        geology: "/geo!!!.png",
-        biology: "/biology!!!.png"
+        meteorology: "meteor!!!.png",
+        geology: "geo!!!.png",
+        biology: "biology!!!.png"
       }
     };
   },

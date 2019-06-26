@@ -40,7 +40,7 @@
             :interval="1000000"
             :value="opened == true ? 1 : 0"
           >
-            <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
+            <v-carousel-item v-for="(item,i) in items" :key="i" :src="this.baseURL+item.src"></v-carousel-item>
           </v-carousel>
           <!--
           <v-dialog v-model="opened" max-width="1000" class="text-xs-center">
@@ -61,12 +61,9 @@ import { setTimeout } from "timers";
 export default {
   data() {
     return {
-      baseURL: "",
+      baseURL: "/utp/",
       bar: { class: "elevation-0 white bar px-0 " },
-      items: [
-        { src: this.baseURL + this.src_hero },
-        { src: this.baseURL + this.src_overlay }
-      ],
+      items: [{ src: this.src_hero }, { src: this.src_overlay }],
       logo_title: "",
       activeClass: "label",
       motionClass: "",
