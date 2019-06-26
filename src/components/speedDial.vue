@@ -7,7 +7,7 @@
     :fixed="true"
     :open-on-hover="false"
     transition="slide-y-reverse-transition"
-    class="mr-4"
+    class="mr-2"
   >
     <template v-slot:activator>
       <v-btn class="mt-4" v-model="fab" color="indigo darken-4" small dark fab>
