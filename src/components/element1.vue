@@ -1,15 +1,10 @@
 <template>
   <v-container class="container my-5" style="padding:0px;">
-    <v-layout row wrap>
+    <v-layout row wrap justify-center>
       <v-flex xs12 sm12 md12 class="white my-3 mx-5" style="background-color: white;">
         <v-card color="white" class="text-xs-right" flat height style="background-color: white;">
           <v-toolbar style :color="bar.class" :dark="bar.dark">
-            <v-btn
-              icon
-              @click="opened=!opened"
-              style="transform:translateX(-10px);"
-              :ripple="false"
-            >
+            <v-btn icon @click="opened=!opened" style="transform:translateX(19px);" :ripple="false">
               <v-img width="30px" height="30px" contain :src="baseURL+'/i_icon_image.png'"/>
             </v-btn>
             <v-spacer></v-spacer>
@@ -30,18 +25,22 @@
               <v-img class="px-1" width="42px" height="42px" contain :src="baseURL+subject.src"/>
             </v-btn>
           </v-toolbar>
-          <span class="elementName mr-3">{{elementName}}</span>
-          <v-carousel
-            class="mx-4 my-3"
-            style="max-width:1053px;"
-            hide-delimiters
-            hide-controls
-            :reverse="opened"
-            :interval="1000000"
-            :value="opened == true ? 1 : 0"
-          >
-            <v-carousel-item v-for="(item,i) in items" :key="i" :src="baseURL+item.src"></v-carousel-item>
-          </v-carousel>
+          <span class="elementName mr-5">{{elementName}}</span>
+          <v-container fluid>
+            <v-layout justify-center>
+              <v-carousel
+                class="mx-4 my-3"
+                style="max-width:1053px;"
+                hide-delimiters
+                hide-controls
+                :reverse="opened"
+                :interval="1000000"
+                :value="opened == true ? 1 : 0"
+              >
+                <v-carousel-item v-for="(item,i) in items" :key="i" :src="baseURL+item.src"></v-carousel-item>
+              </v-carousel>
+            </v-layout>
+          </v-container>
           <!--
           <v-dialog v-model="opened" max-width="1000" class="text-xs-center">
             
@@ -62,7 +61,7 @@ export default {
   data() {
     return {
       baseURL: "/utp/",
-      bar: { class: "elevation-0 white bar px-0 " },
+      bar: { class: "elevation-0 white bar pr-4 " },
       items: [{ src: this.src_hero }, { src: this.src_overlay }],
       logo_title: "",
       activeClass: "label",
