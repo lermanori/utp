@@ -10,10 +10,6 @@ export default [{
       {
         "text": "",
         "src": "/biology_logo.png"
-      },
-      {
-        "text": "",
-        "src": "/biology_logo.png"
       }
     ],
     "elementName": "Sardines Run | ריצת הסרדינים",

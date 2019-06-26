@@ -53,7 +53,10 @@ export default new Router({
       component: () => import( /* webpackChunkName: "about" */ './views/meteorology.vue')
     },
   ],
-  scrollBehavior: function (to, from, savedPosition) {
-    return { x: 0, y: 0 }
+  scrollBehavior: function () {
+    return {
+      x: 0,
+      y: 0
+    }
   }
 })

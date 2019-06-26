@@ -9,13 +9,21 @@
           fab
           color="black"
           :to="to"
+          :ripple="false"
         >
+          <video muted playsinline autoplay="true" loop style="width:20vw;">
+            <source :src="src" type="video/mp4">
+          </video>
+          <!--
           <v-img
             contain
             position="center center"
             :src="src"
             style="border-radius:50%; height:250px; width:250px;"
-          />
+            @mouseover="mouse_over_handler"
+            @mouseleave="mouse_out_handler"
+            :class="[animated]"
+          />-->
         </v-btn>
       </v-flex>
       <v-flex xs12>
@@ -29,21 +37,41 @@
 
 <script>
 export default {
-  props: ["src", "label", "to"]
+  data() {
+    return {
+      animated: ""
+    };
+  },
+  methods: {
+    mouse_over_handler() {
+      this.animated = this.animation;
+    },
+    mouse_out_handler() {
+      this.animated = "";
+    }
+  },
+  props: ["src", "label", "to", "animation"]
 };
 </script>
 
 <style scoped>
 @font-face {
-  font-family: rutz-title;
-  src: url("../../public/rutz_font/Rutz_OEMedPro.otf");
+  font-family: rutz-bold;
+  src: url("../../public/rutz_font/Rutz_OEBolPro.otf");
 }
 h1 {
-  font-family: rutz-title;
+  font-family: rutz-bold;
   font-weight: 50;
+  font-size: 32px;
 }
 .v-btn--floating {
   height: 100px;
   width: 100px;
+}
+.v-img :hover {
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-duration: 300ms;
 }
 </style>

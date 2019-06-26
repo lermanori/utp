@@ -6,9 +6,10 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-
-      <v-flex  xs12  v-for="(element_obj,index) in dataMeteorology" :key="index">
-        <app-element1 class="ma-5"
+      <v-flex xs12 v-for="(element_obj,index) in dataMeteorology" :key="index">
+        <app-element1
+          v-if="ready"
+          class="ma-5"
           :symbols="element_obj.symbols"
           :elementName="element_obj.elementName"
           :src_hero="element_obj.src_hero"
@@ -21,15 +22,15 @@
 
 <script>
 import element1 from "../components/element1.vue";
-import DataMeteorology from "../../public/data_meteorology.js"
-
+import DataMeteorology from "../../public/data_meteorology.js";
 
 export default {
   data() {
     return {
-      baseURL:"/utp/",
-      dataMeteorology:DataMeteorology,
-      meteorology_img_src: "/meteorology_image.png",
+      ready: false,
+      baseURL: "/utp/",
+      dataMeteorology: DataMeteorology,
+      meteorology_img_src: "/meteorology_image.png"
       /*element_obj: {
         symbols: [
           { text: "מתקיימת בקיץ", src: "/summer_icon_image.png" },
@@ -47,6 +48,11 @@ export default {
   },
   components: {
     "app-element1": element1
+  },
+  mounted() {
+    setTimeout(() => {
+      this.ready = true;
+    }, 1500);
   }
 };
 </script>
