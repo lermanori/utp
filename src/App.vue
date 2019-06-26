@@ -8,7 +8,10 @@
           mode="out-in"
           duration="700"
         >
-          <router-view/>
+          <router-view v-if="this.$vuetify.breakpoints.lgAndUp"/>
+          <template v-else>
+            <h1>view on devices from 1000px and up</h1>
+          </template>
         </transition>
         <app-speed-dial/>
       </v-container>
