@@ -12,7 +12,9 @@
           <template v-else>
             <v-layout justify-center class="text-xs-center">
               <h1 class="mt-5">watch in horizontal view</h1>
-              <v-icon>screen_rotation</v-icon>
+              <v-btn outline xl>
+                <v-icon>screen_rotation</v-icon>
+              </v-btn>
             </v-layout>
           </template>
         </transition>
