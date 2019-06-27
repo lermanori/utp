@@ -11,7 +11,8 @@
           <router-view v-if="$vuetify.breakpoint.smAndUp"/>
           <template v-else>
             <v-layout justify-center class="text-xs-center">
-              <h1 class="mt-5">view on devices from 1000px and up</h1>
+              <h1 class="mt-5">watch in horizontal view</h1>
+              <v-icon>screen_rotation</v-icon>
             </v-layout>
           </template>
         </transition>
