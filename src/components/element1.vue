@@ -9,7 +9,12 @@
       style="background-color: white;min-height:90vh;"
     >
       <v-toolbar style="padding:0px;" :color="bar.class" :dark="bar.dark">
-        <v-btn icon @click="opened=!opened" style="transform:translateX(-10px);" :ripple="false">
+        <v-btn
+          icon
+          @click="opened=!opened"
+          :style="this.$vuetify.breakpoint.lgAndUp ? 'transform:translateX(-10px);': '' "
+          :ripple="false"
+        >
           <v-img width="30px" height="30px" contain :src="baseURL+'/i_icon_image.png'"/>
         </v-btn>
         <v-spacer></v-spacer>
