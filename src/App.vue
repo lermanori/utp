@@ -11,8 +11,8 @@
           <router-view v-if="$vuetify.breakpoint.smAndUp"/>
           <template v-else>
             <v-layout justify-center class="text-xs-center">
-              <h1 class="mt-5">watch in horizontal view</h1>
-              <v-btn outline xl>
+              <h1 class="mt-5 mx-3">watch in horizontal view</h1>
+              <v-btn class="mt-5 mx-5" outline xl>
                 <v-icon>screen_rotation</v-icon>
               </v-btn>
             </v-layout>
